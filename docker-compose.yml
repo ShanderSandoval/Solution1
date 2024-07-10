@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  mysql-server:
+    image: sesandoval21/mysql-database
+    container_name: DB_MYSQL
+    environment:
+      MYSQL_ROOT_PASSWORD: "admin"
+      MYSQL_DATABASE: app_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysqlserver_data:/var/lib/mysql
+    networks:
+      - my-network
+  
+  backend:
+    image: sesandoval21/springapi
+    container_name: APP-BACKEND
+    depends_on:
+      - mysql-server
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-server:3306/app_db?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: admin
+    ports:
+      - "8080:8080"
+    networks:
+      - my-network
+
+  frontend:
+    image: sesandoval21/frontreact  # Asegúrate de que esta imagen esté disponible en Docker Hub
+    container_name: APP-FRONTEND
+    ports:
+      - "3000:3000"  # Asegúrate de que el puerto coincida con el puerto expuesto en el Dockerfile
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
