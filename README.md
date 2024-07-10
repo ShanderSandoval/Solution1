@@ -1,30 +1,34 @@
-# Recursos Humanos Application
+# Human Resources Application
 
-Este repositorio contiene los archivos necesarios para desplegar la aplicación de Recursos Humanos usando Docker Compose. La aplicación está dividida en dos submódulos: `recursos-humanos-app` y `recursos-humanos-spring`, y una base de datos MySQL.
+This repository contains the files necessary to deploy the Human Resources application using Docker Compose. The application is divided into two submodules: `human-resources-app` and `human-resources-spring`, and a MySQL database.
 
-## Estructura del Proyecto
+## Project Structure
 
-- **recursos-humanos-app**: Contiene la aplicación principal.
-- **recursos-humanos-spring**: Contiene el backend de la aplicación.
-- **mysqlserver_data**: Volumen de datos para la base de datos MySQL.
-- **docker-compose.yml**: Archivo de configuración de Docker Compose.
+- **human-resources-app**: Contains the main application.
+- **human-resources-spring**: Contains the backend of the application.
+- **mysqlserver_data**: Data volume for the MySQL database.
+- **docker-compose.yml**: Docker Compose configuration file.
 
-## Requisitos Previos
+## Prerequisites
 
-Antes de empezar, asegúrate de tener instalados los siguientes programas en tu sistema:
+Before starting, make sure you have the following programs installed on your system:
 
 - Docker
 - Docker Compose
 - Git
 
-## Instrucciones de Configuración
+## Setup Instructions
 
-### Clonar el Repositorio
+### Clone the Repository
 
-Clona este repositorio y sus submódulos usando el siguiente comando:
+Clone this repository and its submodules using the following command:
 
 ```bash
-git clone --recurse-submodules <URL_DEL_REPOSITORIO>
+git clone --recurse-submodules <REPOSITORY_URL>
+````
 
-### Configuración de Docker Compose
-El archivo docker-compose.yml contiene la configuración necesaria para desplegar la aplicación
+Docker Compose Configuration
+The docker-compose.yml file contains the necessary configuration to deploy the application and the MySQL database.
+
+Environment Variables
+Make sure to set up the necessary environment variables for your application in the corresponding .env files in each submodule, if needed.
