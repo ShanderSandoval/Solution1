@@ -1,6 +1,6 @@
-[submodule "recursos-humanos-app"]
-	path = FrontonReact
+[submodule "FrontReact"]
+	path = recursos-humanos-app
 	url = https://github.com/ShanderSandoval/recursos-humanos-app.git
-[submodule "recursos-humanos-spring"]
-	path = BackonJava
+[submodule "BackJava"]
+	path = recursos-humanos-spring
 	url = https://github.com/ShanderSandoval/recursos-humanos-spring.git
